@@ -12,18 +12,19 @@ default: &default
   timeout: 5000
 
 
-# development:
+development:
 #   <<: *default
-#   adapter: mysql2
-#   encoding: utf8
-#   database: blog_development
-#   pool: 5
-#   username: root
-#   password:
+  adapter: mysql2
+  encoding: utf8
+  database: wmx_dev
+  pool: 5
+  username: root
+  password: Moca32!
+  host: localhost
 #   socket: /tmp/mysql.sock
 
 
-development:
+development2:
   <<: *default
   database: db/development.sqlite3
 

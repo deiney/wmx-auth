@@ -56,10 +56,13 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-      resources :users
-      resources :friendships
 
       get 'users/search/:query' => 'users#search'
+      get 'users/login' => 'users#login'
+
+      resources :users, only: [:create, :show, :index]
+      resources :friendships
+
     end
   end
 

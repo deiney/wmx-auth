@@ -3,6 +3,7 @@ curl -i -X POST -H "Content-Type: application/json" -H "Authorization: Token tok
 
 curl -i -X POST -H "Authorization: Token token=XY45GJXIJ52WBlsoBP3iJwtt" -F "user[username]=newuser5" -F "user[password]=xyz" -F "user[first_name]=dudi" -F "user[last_name]=einey" -F "user[email]=myemail5@gmail.com" -F "user[photo]=@/Users/dudi/Pictures/IMG_1261.JPG" http://localhost:3000/api/v1/users
 
+curl -i -X POST -F "user[username]=newuser5" -F "user[password]=xyz" -F "user[first_name]=dudi" -F "user[last_name]=einey" -F "user[email]=myemail5@gmail.com" -F "user[photo]=@/Users/dudi/Pictures/IMG_1261.JPG" http://localhost:3000/api/v1/users
 
 
 
@@ -19,3 +20,13 @@ curl -i -H "Authorization: Token token=QbxyIfcRh3lcWQodiH7ktwtt" http://localhos
 curl -i -X POST -H "Content-Type: application/json" -H "Authorization: Token token=XY45GJXIJ52WBlsoBP3iJwtt" -d '{"friend_id":"5"}' http://localhost:3000/api/v1/friendships
 
 curl -i -X POST -H "Content-Type: application/json" -H "Authorization: Token token=QbxyIfcRh3lcWQodiH7ktwtt" -d '{"friend_id":"1"}' http://localhost:3000/api/v1/friendships
+
+
+curl -i -X POST -F "user[username]=newuser5" -F "user[password]=xyz" -F "user[first_name]=dudi" -F "user[last_name]=einey" -F "user[email]=myemail5@gmail.com" -F "user[photo]=@/Users/dudi/Pictures/IMG_1261.JPG" http://ec2-54-165-250-63.compute-1.amazonaws.com:8080/api/v1/users
+
+IqVqmyY7dAzpQvmlU8uHngtt
+
+
+
+curl -i -F "user[username]=newuser5" -F "user[password]=xyz123" http://localhost:3000/api/v1/users/login
+

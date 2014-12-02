@@ -1,0 +1,38 @@
+API
+
+Available on http://ec2-54-165-250-63.compute-1.amazonaws.com:8080/api/v1/
+
+Following paths are implemented:
+
+POST /users - Create new users
+e.g.
+
+	curl -i -X POST -F "user[username]=newuser5" -F "user[password]=xyz" -F "user[first_name]=dudi" -F "user[last_name]=einey" -F "user[email]=myemail5@gmail.com" -F "user[photo]=@/Users/dudi/Pictures/IMG_1261.JPG" http://ec2-54-165-250-63.compute-1.amazonaws.com:8080/api/v1/users
+
+GET /users - get current user's details
+
+	curl -i -H "Authorization: Token token=IqVqmyY7dAzpQvmlU8uHngtt" http://ec2-54-165-250-63.compute-1.amazonaws.com:8080/api/v1/users
+
+GET /users/search - search user
+
+	curl -i -H "Authorization: Token token=IqVqmyY7dAzpQvmlU8uHngtt" http://ec2-54-165-250-63.compute-1.amazonaws.com:8080/api/v1/users/search/dudi
+
+GET /users/id - view user details 
+
+	curl -i -H "Authorization: Token token=IqVqmyY7dAzpQvmlU8uHngtt" http://ec2-54-165-250-63.compute-1.amazonaws.com:8080/api/v1/users/1
+
+- friends are implemented only unidirectional ('followers')
+
+GET /friendships - see current users's friends 
+
+	curl -i -H "Authorization: Token token=IqVqmyY7dAzpQvmlU8uHngtt" http://ec2-54-165-250-63.compute-1.amazonaws.com:8080/api/v1/friendships
+
+POST /friendships - add user as new friend ('follow')
+
+	curl -i -X POST -H "Content-Type: application/json" -H "Authorization: Token token=IqVqmyY7dAzpQvmlU8uHngtt" -d '{"friend_id":"5"}' http://ec2-54-165-250-63.compute-1.amazonaws.com:8080/api/v1/friendships
+
+DELETE /api/v1/friendships/id - remove friend
+
+	curl -i -X DELETE -H "Authorization: Token token=IqVqmyY7dAzpQvmlU8uHngtt" http://ec2-54-165-250-63.compute-1.amazonaws.com:8080/api/v1/frienships/5
+
+

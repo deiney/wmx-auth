@@ -1,7 +1,15 @@
 class User < ActiveRecord::Base
 
 	has_many :friendships
-	has_many :friends, :through => :friendships
+	has_many :friends, :through => :friendships, 
+			 :conditions => "status = 'accepted'",
+			 :order => [:first_name, :last_name]
+	has_many :requested_friends, :through => :friendships, 
+			 :conditions => "status = 'requested'",
+			 :order => [:first_name, :last_name]
+	has_many :pending_friends, :through => :friendships, 
+			 :conditions => "status = 'pending'",
+			 :order => [:first_name, :last_name]
 
 	EMAIL_REGEX = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i
 
